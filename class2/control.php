@@ -60,7 +60,7 @@ function nesto() {
 }
 
 
-if ($benzin > 0) {
+if ($benzin > 0){
     $kretanje = true;
 } else {
     $kretanje = false;
