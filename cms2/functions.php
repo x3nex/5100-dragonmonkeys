@@ -1,14 +1,5 @@
 <?php
 
-/*
- * Get all tasks
- */
-
-function fetchAllTasks($conn) {
-
-}
-
-
 function dd($input)
 {
     echo "<pre>";

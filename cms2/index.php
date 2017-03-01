@@ -1,7 +1,7 @@
 <?php
 
-$conn = require 'bootstrap.php';
+$query = require 'bootstrap.php';
 
-$tasks = $conn->selectAll('tasks');
+$tasks = $query->getAll('tasks');
 
 require 'index.view.php';
