@@ -2,7 +2,7 @@
 
 class Router {
 
-    protected $routes = [];
+    public $routes = [];
 
     public static function load($file) ///routes.php
     {
@@ -17,10 +17,20 @@ class Router {
         $this->routes = $routes;
     }
 
-    public function direct($uri) // about/culture
+    public function get($route, $controller)
     {
-        if(array_key_exists($uri, $this->routes)){
-            return $this->routes[$uri];
+        $this->routes['GET'][$route] = $controller;
+    }
+
+    public function post($route, $controller)
+    {
+        $this->routes['POST'][$route] = $controller;
+    }
+
+    public function direct($uri, $method) // about/culture
+    {
+        if(array_key_exists($uri, $this->routes[$method])){
+            return $this->routes[$method][$uri];
         }
         throw new Exception('No route found.');
 

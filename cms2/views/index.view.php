@@ -1,4 +1,6 @@
 <?php require 'partials/header.php'; ?>
+
+
 <h1>Tasks</h1>
 <ul>
 
@@ -10,4 +12,11 @@
         <?php endif; ?>
     <?php endforeach; ?>
 </ul>
+
+
+
+    <form action="/names" method="POST">
+        <input type="text" name="title">
+        <button>Submit</button>
+    </form>
 <?php require 'partials/footer.php'; ?>
