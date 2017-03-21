@@ -30,9 +30,18 @@ class Router {
     public function direct($uri, $method) // about/culture
     {
         if(array_key_exists($uri, $this->routes[$method])){
-            return $this->routes[$method][$uri];
+
+            return $this->callAction(
+                ...explode("@", $this->routes[$method][$uri])
+            );
+
         }
         throw new Exception('No route found.');
 
+    }
+
+    public function callAction($controller, $method)
+    {
+        return (new $controller)->$method();
     }
 }
