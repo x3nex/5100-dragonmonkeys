@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Core;
 class Router {
 
     public $routes = [];
@@ -42,6 +42,7 @@ class Router {
 
     public function callAction($controller, $method)
     {
+        $controller = "\\App\\Controllers\\{$controller}";
         return (new $controller)->$method();
     }
 }
